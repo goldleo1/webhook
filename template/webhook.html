@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/webhook.css">
+    <script src="/js/util.js"></script>
+    <script src="/js/webhook.js"></script>
+</head>
+
+<body>
+    <header>
+        <h2 id="loginLink"><a href="/login">login</a></h2>
+        <div class="header">
+            <h1 class="pdr-40">Request Bin</h1>
+            <h1 class="ccc" id="edit">edit</h1>
+            <!-- <h1 class="ccc">create new</h1> -->
+        </div>
+    </header>
+    <div id="popup">
+        <div>
+            <input type="checkbox" name="webhookType" id="" onclick="checkOnlyOne(this)" checked>
+            <h2>Default</h2>
+        </div>
+        <div>
+            <input type="checkbox" name="webhookType" id="" onclick="checkOnlyOne(this)">
+            <h2>Redirect</h2>
+            <input type="text" name="url" placeholder="url">
+        </div>
+        <div>
+            <input type="checkbox" name="webhookType" id="" onclick="checkOnlyOne(this)">
+            <h2>Custom</h2>
+            <input type="text" name="status" placeholder="statusCode">
+            <input type="text" name="contentType" placeholder="contentType">
+            <div>
+                <textarea name="" id="customCode"></textarea>
+            </div>
+        </div>
+    </div>
+    <section id="urlBox">
+        <p id="url" class="_eee">http://lqvkmjh.request.dreamhack.games</p>
+    </section>
+    <div>
+        <nav>
+            <table id="timeTable">
+                <tr>
+                    <th>시간</th>
+                    <th>경로</th>
+                </tr>
+            </table>
+        </nav>
+        <main>
+            <div>
+                <h1>My Request</h1>
+                <table class="reqTable" id="reqSummary">
+                    <tr>
+                        <td>IP</td>
+                        <td id="ip"></td>
+                    </tr>
+                    <tr>
+                        <td>Method</td>
+                        <td id="method"></td>
+                    </tr>
+                    <tr>
+                        <td>Path</td>
+                        <td id="path"></td>
+                    </tr>
+                    <tr>
+                        <td>Querystring</td>
+                        <td id="querystring"></td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <h1>Headers</h1>
+                <table class="reqTable" id="reqHeader">
+                </table>
+            </div>
+            <div>
+                <h1>Body</h1>
+                <table class="reqTable" id="reqBody">
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

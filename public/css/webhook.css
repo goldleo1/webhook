@@ -1,0 +1,187 @@
+.aaa {
+    color: #aaa;
+}
+.bbb {
+    color: #bbb;
+}
+.ccc {
+    color: #ccc;
+}
+.ddd {
+    color: #ddd;
+}
+.eee {
+    color: #eee;
+}
+._aaa {
+    background-color: #aaa;
+}
+._bbb {
+    background-color: #bbb;
+}
+._ccc {
+    background-color: #ccc;
+}
+._ddd {
+    background-color: #ddd;
+}
+._eee {
+    background-color: #eee;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 50px;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+header h2#loginLink a {
+    text-decoration: none;
+    float: right;
+}
+
+header div.header {
+    display: flex;
+    flex-direction: row;
+}
+
+
+header div.header .pdr-40 {
+    padding-right: 40px;
+}
+
+header div.header h1:hover {
+    color: #666;
+    cursor: pointer;
+}
+
+#popup {
+    /* display: none; */
+    position: absolute;
+    width: 1000px;
+    height: 600px;
+    padding: 100px 200px;
+    color: white;
+    background-color: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#popup input[type="checkbox"] {
+    background-color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    vertical-align: middle;
+    appearance: none;
+    outline: none;
+}
+
+#popup input[type="checkbox"]:checked {
+    background: #fffa00;
+}
+#popup input[type="checkbox"] ~ * {
+    opacity: 0;
+}
+#popup input[type="checkbox"]:checked ~ * {
+    opacity: 1;
+}
+
+section {
+    width: 500px;
+    margin: 50px 0;
+}
+
+section #url {
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+section > input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+section > input[type="checkbox"] ~ label {
+    font-size: 24px;
+}
+
+body > div {
+    display: flex;
+    justify-content: start;
+}
+
+nav {
+    width: 200px;
+    padding-right: 250px;
+    border-right: 1px solid black;
+}
+
+nav > table {
+    width: 200px;
+    margin: 0 auto;
+    border-spacing: 0;
+    table-layout: fixed;
+}
+
+nav > table th {
+    text-align: center;
+    width: 120px;
+    padding: 10px;
+}
+
+nav > table td {
+    text-align: center;
+    width: 120px;
+    padding: 10px 0;
+}
+
+nav table tr:not(:first-child):hover {
+    background-color: #aaa;
+}
+
+main {
+    padding: 0 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+main > div {
+    margin-bottom: 30px;
+}
+
+main > div > h1 {
+    margin-bottom: 10px;
+}
+
+.reqTable {
+
+}
+
+.reqTable tr td:first-child {
+    color: blue;
+    font-size: 20px;
+    font-weight: 800;
+    min-width: 200px;
+}
+
+.reqTable tr td:last-child {
+    font-size: 16px;
+}
