@@ -6,12 +6,12 @@ const app = express();
 const session = require("express-session");
 const fileStore = require("session-file-store")(session);
 
-// let db = {};
+let db = {};
 
-// const webhookRouter = require("./routes/webhookRouter.js")(db);
-// const hookRouter = require("./routes/hookRouter.js")(db);
+const webhookRouter = require("./routes/webhookRouter.js")(db);
+const hookRouter = require("./routes/hookRouter.js")(db);
 // const authRouter = require("./routes/authRouter.js");
-const redirectRouter = require("./routes/redirectRouter.js");
+// const redirectRouter = require("./routes/redirectRouter.js");
 
 // const authMiddleware = require("./middleware/authMiddleware.js");
 
@@ -35,16 +35,16 @@ app.use(express.static("public"));
 
 // app.use(authMiddleware);
 
-app.use("/redirect", redirectRouter);
-app.use("/r", redirectRouter);
+// app.use("/redirect", redirectRouter);
+// app.use("/r", redirectRouter);
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "template", "index.html"));
 });
 
-// app.use("/webhook", webhookRouter);
+app.use("/webhook", webhookRouter);
 // app.use("/hook", hookRouter);
-// app.use("/h", hookRouter);
+app.use("/h", hookRouter);
 
 // app.get("/favicon.ico", (req, res) => res.send(""));
 
