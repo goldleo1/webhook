@@ -4,7 +4,7 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const session = require("express-session");
-const fileStore = require("session-file-store")(session);
+// const fileStore = require("session-file-store")(session);
 
 let db = {};
 
@@ -17,18 +17,18 @@ const hookRouter = require("./routes/hookRouter.js")(db);
 
 const PORT = 80;
 
-app.use(
-  session({
-    secret: "secret key",
-    resave: false,
-    saveUninitialized: true,
-    cookie: {
-      httpOnly: true,
-      maxAge: 60 * 60 * 1000, // 1h
-    },
-    store: new fileStore(),
-  })
-);
+// app.use(
+//   session({
+//     secret: "secret key",
+//     resave: false,
+//     saveUninitialized: true,
+//     cookie: {
+//       httpOnly: true,
+//       maxAge: 60 * 60 * 1000, // 1h
+//     },
+//     store: new fileStore(),
+//   })
+// );
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
